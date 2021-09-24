@@ -76,6 +76,7 @@ Date::Date(int y , int m , int d )
         cout << "Invalid day!" << endl;
     }
     day = d;
+    year = y;
 }
 
 void Date::NewDay() 
