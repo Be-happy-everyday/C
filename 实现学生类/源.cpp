@@ -1,25 +1,26 @@
 #include<iostream>
 using namespace std;
 
+int c = 0;
+double average_1 = 0, average_2 = 0, average_3 = 0;
 class Student
 {
 private:
-	char name[10];
-	char SID[12];
-	int grade[3];
-
+	char name[10] = {};
+	char SID[12] = {};
+	int grade[3] = {};
 public:
 	Student(char *stu_name, char *stu_sid, int stu_grade1, int stu_grade2, int stu_grade3)
 	{
 		int i = 0;
-		while (stu_name[i])
+		while (stu_name[i]&&i<10)
 		{
 			name[i] = stu_name[i];
 			i++;
 		}
 
 		i = 0;
-		while (stu_sid[i])
+		while (stu_sid[i]&&i<12)
 		{
 			SID[i] = stu_sid[i];
 			i++;
@@ -28,11 +29,31 @@ public:
 		grade[0] = stu_grade1;
 		grade[1] = stu_grade2;
 		grade[2] = stu_grade3;
+
+		c++;
+		average_1 += grade[0];
+		average_2 += grade[1];
+		average_3 += grade[2];
 	}
 
 	void display()
 	{
 		cout << name << " " << SID << " " << grade[0] << " " << grade[1] << " " << grade[2]<<endl;
+	}
+
+	double average1()
+	{
+		return average_1 / c;
+	}
+
+	double average2()
+	{
+		return average_2 / c;
+	}
+
+	double average3()
+	{
+		return average_3 / c;
 	}
 };
 
@@ -57,3 +78,6 @@ int main() {
 	cout << "The average grade of course3:" << stu2->average3() << endl;
 	return 0;
 }
+
+//Run-Time Check Failure #2 - Stack around the variable 'name3' was corrupted.
+//LiWeiwei 200906294 88 75 91 ChenHanfu 200902164 86 78 93 ZhanGaolin 200908079 94 69 97
