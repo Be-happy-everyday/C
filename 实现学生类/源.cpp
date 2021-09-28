@@ -6,21 +6,21 @@ double average_1 = 0, average_2 = 0, average_3 = 0;
 class Student
 {
 private:
-	char name[10] = {};
-	char SID[12] = {};
+	char name[12] = {};
+	char SID[10] = {};
 	int grade[3] = {};
 public:
 	Student(char *stu_name, char *stu_sid, int stu_grade1, int stu_grade2, int stu_grade3)
 	{
 		int i = 0;
-		while (stu_name[i]&&i<10)
+		while (stu_name[i]&&i<12)
 		{
 			name[i] = stu_name[i];
 			i++;
 		}
 
 		i = 0;
-		while (stu_sid[i]&&i<12)
+		while (stu_sid[i]&&i<10)
 		{
 			SID[i] = stu_sid[i];
 			i++;
@@ -57,10 +57,11 @@ public:
 	}
 };
 
-int main() {
+int main() 
+{
 	Student* stu1, * stu2, * stu3;
-	char name1[10], name2[10], name3[10];
-	char num1[12], num2[12], num3[12];
+	char name1[12], name2[12], name3[12];
+	char num1[10], num2[10], num3[10];
 	int grade1[3], grade2[3], grade3[3];
 	cin >> name1 >> num1 >> grade1[0] >> grade1[1] >> grade1[2];
 	cin >> name2 >> num2 >> grade2[0] >> grade2[1] >> grade2[2];
