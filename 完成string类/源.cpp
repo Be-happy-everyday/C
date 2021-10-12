@@ -6,3 +6,35 @@
 
 //void toUppercase()将String的字符串的字母全部转化为大写字母。
 #include"CString.h"
+
+bool String::IsSubstring(const char* str)
+{
+	int str_len = 0;
+	while (str[str_len] != '\0')
+	{
+		str_len++;
+	}
+
+	for (int index = 0; index <= this->len - str_len + 1; index++)
+	{
+		int i = 0;
+		while (mystr[index] == str[i])
+		{
+			i++;
+			index++;
+			if (i == str_len) return true;
+		}
+		index = index - i;
+	}
+
+	return false;
+}
+
+int main()
+{
+	String a("ZhipengXiong");
+	char b[5] = { "peng" };
+	cout << a.IsSubstring(b) << endl;
+
+	return 0;
+}
