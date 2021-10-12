@@ -80,5 +80,4 @@ int main()
 	return 0;
 }
 
-//Run-Time Check Failure #2 - Stack around the variable 'name3' was corrupted.
 //LiWeiwei 200906294 88 75 91 ChenHanfu 200902164 86 78 93 ZhanGaolin 200908079 94 69 97
